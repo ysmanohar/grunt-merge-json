@@ -24,7 +24,7 @@
 
 /* global module: false */
 module.exports = function (grunt) {
-    grunt.registerMultiTask("merge-json", "Merge Multiple JSON Files", function () {
+    grunt.registerMultiTask("merge-json-to-js", "Merge Multiple JSON Files into a javascript var", function () {
         /*  prepare options  */
         var options = this.options({
             replacer: null,
@@ -52,7 +52,7 @@ module.exports = function (grunt) {
 
                 /*  write object as new JSON  */
                 grunt.log.debug("writing JSON destination file \"" + f.dest + "\"");
-                grunt.file.write(f.dest, JSON.stringify(json, options.replacer, options.space));
+                grunt.file.write(f.dest, "var " + this.varName + " = " + JSON.stringify(json, options.replacer, options.space) + ";");
                 grunt.log.writeln("File \"" + f.dest + "\" created.");
             }
             catch (e) {
