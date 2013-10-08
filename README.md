@@ -1,13 +1,6 @@
+# grunt-merge-json-to-js
 
-# grunt-merge-json
-
-Grunt Task for Merging Multiple JSON Files
-
-<p/>
-<img src="https://nodei.co/npm/grunt-merge-json.png?downloads=true&stars=true" alt=""/>
-
-<p/>
-<img src="https://david-dm.org/rse/grunt-merge-json.png" alt=""/>
+Grunt Task for Merging Multiple JSON Files into JS
 
 
 ## Getting Started
@@ -22,14 +15,14 @@ install and use Grunt plugins. Once you're familiar with that process,
 you may install this plugin with this command:
 
 ```shell
-npm install grunt-merge-json --save-dev
+npm install grunt-merge-json-to-js --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your
 Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-merge-json');
+grunt.loadNpmTasks('grunt-merge-json-to-js');
 ```
 
 ## Task Options
@@ -39,7 +32,7 @@ grunt.loadNpmTasks('grunt-merge-json');
 
 ## Merge JSON Task
 
-_Run this task with the `grunt merge-json` command._
+_Run this task with the `grunt merge-json-to-js` command._
 
 Task targets, files and options may be specified according to the Grunt
 [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.
@@ -70,10 +63,10 @@ Assuming we have the following types of source JSON files:
 }
 ```
 
-Assuming we want to generate the following destination JSON file:
+Assuming we want to generate the following destination JS file:
 
-```json
-{
+```js
+var translations = window.translations || {}; translations.en = {
     "foo": {
         "title": "The Foo",
         "name":  "A wonderful component"
@@ -89,7 +82,7 @@ Assuming we want to generate the following destination JSON file:
 
 ```js
 grunt.initConfig({
-    "merge-json": {
+    "merge-json-to-js": {
         "en": {
             src: [ "src/**/*-en.json" ],
             dest: "www/en.json"
@@ -106,7 +99,7 @@ grunt.initConfig({
 
 ```js
 grunt.initConfig({
-    "merge-json": {
+    "merge-json-to-js": {
         "i18n": {
             files: {
                 "www/en.json": [ "src/**/*-en.json" ],
