@@ -2,7 +2,7 @@
     "name":        "grunt-merge-json-to-js",
     "homepage":    "http://github.com/jasonrose/grunt-merge-json",
     "description": "Grunt Task for Merging Multiple JSON Files into a js var",
-    "version":     "0.1.0",
+    "version":     "0.1.1",
     "license":     "MIT",
     "author": {
         "name":    "Jason Rose",
@@ -33,7 +33,7 @@
         "grunt-contrib-clean":  "~0.4.1"
     },
     "peerDependencies": {
-        "grunt":                "~0.4.1"
+        "grunt":                ">=0.4.0"
     },
     "engines": {
         "node":                 ">=0.10.0"
